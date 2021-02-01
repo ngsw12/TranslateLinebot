@@ -1,2 +1,2 @@
 # TranslateLinebot
-GoogleAppScriptとLine Message APIを使用して翻訳botを作成
+GoogleAppScriptとLine Message APIを使用して作成した翻訳bot

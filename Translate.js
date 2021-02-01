@@ -19,8 +19,8 @@ function doPost(e) {
     var sourceLanguage = ''
     // 変換後の言語
     var targetLanguage = 'en';
-    
-    var replyMessage = LanguageApp.translate(userMessage, '', targetLanguage);
+
+    var replyMessage = LanguageApp.translate(userMessage, sourceLanguage, targetLanguage);
 
     var url = 'https://api.line.me/v2/bot/message/reply';
 
