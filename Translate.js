@@ -9,16 +9,25 @@ function doPost(e) {
   if (typeof replyToken === 'undefined') {
     return; 
   }
+
   var userId = event.source.userId;
   var nickname = getUserProfile(userId);
 
   if(event.type == 'message') {
     var userMessage = event.message.text;
+    
+    // 正規表現
+    let regax = /[a-z]/g;
 
     // 送られたメッセージの言語、未入力の場合は自動で判定
     var sourceLanguage = ''
     // 変換後の言語
     var targetLanguage = 'en';
+
+    // アルファベットを含む場合は日本語に変換
+    if (regax.test(userMessage)) {
+    targetLanguage = 'ja';
+    }
 
     var replyMessage = LanguageApp.translate(userMessage, sourceLanguage, targetLanguage);
 
